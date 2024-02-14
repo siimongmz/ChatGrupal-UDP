@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="10" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.chat.chatgrupal.ChatController"
+            prefHeight="400.0" prefWidth="600.0" alignment="CENTER">
+    <VBox spacing="10" HBox.hgrow="ALWAYS" alignment="CENTER">
+        <Label text="Introduce tu nombre de usuario"/>
+        <TextField fx:id="textoUsuario" alignment="CENTER" HBox.hgrow="ALWAYS" prefHeight="30"></TextField>
+        <Button text="Guardar" onMouseClicked="#comprobarInicioSesion"></Button>
+    </VBox>
+</HBox>

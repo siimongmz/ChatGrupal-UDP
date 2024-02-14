@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ChatGrupal:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e1873ed1-9035-4bab-a442-1082628c057c" name="Changes" comment="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ChatGrupal_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorTCP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/chat/chatgrupal/general-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/chat/chatgrupal/general-view.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="PruebasMensajesBurbujas" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;siimongmz&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;assignee&quot;: &quot;siimongmz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="siimongmz" />
+        <option name="repository" value="ChatGrupal" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="cf2ef38d-1c08-4a31-a88a-9d75860c1ac1" />
+        <option name="url" value="https://github.com/siimongmz/ChatGrupal.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2bM4kYZvfzwBoYPsFqHDgmYi0YX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Cliente.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Servidor.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/IdeaProjects/ChatGrupal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.26306307&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReadonlyStatusHandler">
+    <option name="SHOW_DIALOG" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Cliente">
+    <configuration name="Cliente" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="com.chat.chatgrupal.ChatApplication" />
+      <module name="ChatGrupal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.servidor.Servidor" />
+      <module name="ChatGrupal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Cliente" />
+      <item itemvalue="Application.Servidor" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1873ed1-9035-4bab-a442-1082628c057c" name="Changes" comment="" />
+      <created>1706011758230</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706011758230</updated>
+      <workItem from="1706603893901" duration="123000" />
+      <workItem from="1706604033557" duration="168000" />
+      <workItem from="1706604223187" duration="1145000" />
+      <workItem from="1706605389712" duration="104000" />
+      <workItem from="1706605510667" duration="106000" />
+      <workItem from="1706605633381" duration="202000" />
+      <workItem from="1706605856334" duration="1183000" />
+      <workItem from="1706607058748" duration="16462000" />
+      <workItem from="1706698004861" duration="2080000" />
+      <workItem from="1706703875241" duration="210000" />
+      <workItem from="1706704106759" duration="23000" />
+      <workItem from="1706721642634" duration="597000" />
+      <workItem from="1707726595894" duration="3900000" />
+      <workItem from="1707809983804" duration="1028000" />
+      <workItem from="1707907506307" duration="1188000" />
+      <workItem from="1707909519852" duration="19000" />
+    </task>
+    <task id="LOCAL-00001" summary="Configuración inicial de la vista principal de la aplicacion en la parte del cliente">
+      <option name="closed" value="true" />
+      <created>1706024264330</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706024264330</updated>
+    </task>
+    <task id="LOCAL-00002" summary="configuracion de proyecto">
+      <option name="closed" value="true" />
+      <created>1706048383676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706048383676</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implementado funcionamiento para que los clientes puedan enviar y recibir mensajes evitado bloqueos ademas se soluciona el problema de que quedasen procesos activos">
+      <option name="closed" value="true" />
+      <created>1706185512035</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706185512035</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Cierre de los streams y implementacion de lombok">
+      <option name="closed" value="true" />
+      <created>1706608724957</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706608724957</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar">
+      <option name="closed" value="true" />
+      <created>1706639770798</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706639770798</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Configuración inicial de la vista principal de la aplicacion en la parte del cliente" />
+    <MESSAGE value="configuracion de proyecto" />
+    <MESSAGE value="Implementado funcionamiento para que los clientes puedan enviar y recibir mensajes evitado bloqueos ademas se soluciona el problema de que quedasen procesos activos" />
+    <MESSAGE value="Cierre de los streams y implementacion de lombok" />
+    <MESSAGE value="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
