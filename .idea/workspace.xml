@@ -9,14 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1873ed1-9035-4bab-a442-1082628c057c" name="Changes" comment="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP">
+    <list default="true" id="e1873ed1-9035-4bab-a442-1082628c057c" name="Changes" comment="Optimizacion de los imports eliminando residuos de TCP y imports que no se utilizan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/hilos/GestionCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/hilos/GestionCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorUDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorUDP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/Mensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/Mensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,7 @@
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
         <option name="accountId" value="cf2ef38d-1c08-4a31-a88a-9d75860c1ac1" />
-        <option name="url" value="https://github.com/siimongmz/ChatGrupal.git" />
+        <option name="url" value="https://github.com/siimongmz/ChatGrupal-UDP.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -222,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708000517408</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Optimizacion de los imports eliminando residuos de TCP y imports que no se utilizan">
+      <option name="closed" value="true" />
+      <created>1708000785702</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708000785702</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +249,8 @@
     <MESSAGE value="Cierre de los streams y implementacion de lombok" />
     <MESSAGE value="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar" />
     <MESSAGE value="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP" />
+    <MESSAGE value="Optimizacion de los imports eliminando residuos de TCP y imports que no se utilizan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimizacion de los imports eliminando residuos de TCP y imports que no se utilizan" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
