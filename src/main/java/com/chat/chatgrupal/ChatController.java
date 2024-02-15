@@ -11,6 +11,7 @@ import lombok.Getter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import static com.chat.chatgrupal.ChatApplication.*;
 
 public class ChatController {
 
@@ -30,25 +31,19 @@ public class ChatController {
     @FXML
     protected void comprobarInicioSesion(){
         Usuario usuario = new Usuario(textoUsuario.getText());
-        try {
-            ObjectOutputStream salida = ChatApplication.getSalida();
-            ObjectInputStream entrada = ChatApplication.getEntrada();
-            //Enviamos el objeto al servidor
-            salida.writeObject(usuario);
-            if (entrada.readInt()==1) {
-                ChatApplication.setUsuario(usuario);
-                Stage stage = (Stage) textoUsuario.getScene().getWindow();
-                stage.close();
-            } else {
-                Alert alerta = new Alert(Alert.AlertType.ERROR);
-                alerta.setTitle("Error");
-                alerta.setHeaderText(null); // Puedes establecer un encabezado si lo deseas
-                alerta.setContentText("El Usuario ya existe");
+        //Enviamos el objeto al servidor
+        enviarAlServidor(usuario);
+        if ((Integer)recibirDelServidor()==1) {
+            ChatApplication.setUsuario(usuario);
+            Stage stage = (Stage) textoUsuario.getScene().getWindow();
+            stage.close();
+        } else {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error");
+            alerta.setHeaderText(null); // Puedes establecer un encabezado si lo deseas
+            alerta.setContentText("El Usuario ya existe");
 
-                alerta.showAndWait();
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            alerta.showAndWait();
         }
 
 
@@ -59,16 +54,9 @@ public class ChatController {
      */
     @FXML
     protected void enviarMensaje(){
-        ObjectOutputStream salida = ChatApplication.getSalida();
-        ObjectInputStream entrada = ChatApplication.getEntrada();
 
-        try {
-            salida.writeObject(new Mensaje(textAreaEnvio.getText(),ChatApplication.getUsuario()));
-            salida.flush();
-            textAreaEnvio.setText("");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        enviarAlServidor(new Mensaje(textAreaEnvio.getText(),ChatApplication.getUsuario()));
+        textAreaEnvio.setText("");
     }
 
 

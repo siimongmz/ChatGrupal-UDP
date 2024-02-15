@@ -6,25 +6,20 @@ import com.servidor.Servidor;
 import lombok.Getter;
 
 import java.io.*;
-import java.net.Socket;
+import java.net.DatagramPacket;
+import java.util.concurrent.LinkedBlockingQueue;
 
-public class GestionServidorTCP implements Runnable {
-    private final Socket socket;
+public class GestionServidorUDP implements Runnable {
     @Getter
     private Usuario usuario;
+    @Getter
+    private int puerto;
     private boolean funcionando = true;
-    private final ObjectInputStream entrada;
-    private final ObjectOutputStream salida;
+    private LinkedBlockingQueue<Object> listaDeEspera = new LinkedBlockingQueue<>();
     private final String CODIGO_FIN = "termino";
 
-    public GestionServidorTCP(Socket socket) {
-        this.socket = socket;
-        try {
-            this.salida = new ObjectOutputStream(socket.getOutputStream());
-            this.entrada = new ObjectInputStream(socket.getInputStream());
-        } catch (IOException e) {
-            throw new RuntimeException("Error en la salida o entrada");
-        }
+    public GestionServidorUDP(int puerto) {
+        this.puerto = puerto;
     }
 
     @Override
@@ -39,21 +34,13 @@ public class GestionServidorTCP implements Runnable {
         //Se escucha la solicitud siempre y cuando haya bytes disponibles para leer
         while (funcionando) {
             try {
-                if (socket.getInputStream().available() > 0) {
-                    gestionarEntrada(entrada.readObject());
-                }
+                    gestionarEntrada(listaDeEspera.take());
 
-            } catch (IOException | ClassNotFoundException e) {
-                throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+                break;
             }
 
 
-        }
-        try {
-            salida.close();
-            entrada.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -89,22 +76,19 @@ public class GestionServidorTCP implements Runnable {
     private Usuario pedirUsuario() {
         Usuario usuario;
         try {
-            usuario = (Usuario) entrada.readObject();
+            //se queda bloqueado
+            usuario = (Usuario) listaDeEspera.take();
             if (usuario != null && Servidor.esUsuarioValido(usuario)) {
-                salida.writeInt(1);
-                salida.writeObject(Servidor.getMensjaes());
-                salida.flush();
+                Servidor.enviarAlCliente(Integer.valueOf(1),this.puerto);
+                Servidor.enviarAlCliente(Servidor.getMensjaes(),this.puerto);
                 return usuario;
 
             } else {
-                salida.writeInt(0);
-                salida.flush();
+                Servidor.enviarAlCliente(Integer.valueOf(0),this.puerto);
             }
 
-        } catch (IOException e) {
-            System.out.println("IOException");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Clase no encontrada");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
 
 
@@ -115,12 +99,7 @@ public class GestionServidorTCP implements Runnable {
      * Metodo encargado de enviar la lista de usuarios del servidor al cliente del socket que gestiona
      */
     public void enviarUsuarios() {
-        try {
-            salida.writeObject(Servidor.getUserList());
-            salida.flush();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Servidor.enviarAlCliente(Servidor.getUserList(),this.puerto);
     }
 
     /**
@@ -135,13 +114,17 @@ public class GestionServidorTCP implements Runnable {
      * @param mensaje el mensaje que será enviado
      */
     public void enviarMensaje(Mensaje mensaje) {
-        try {
-            salida.writeObject(mensaje);
-            salida.flush();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Servidor.enviarAlCliente(mensaje,this.puerto);
     }
 
 
+
+
+    public void agregarObjetoRecibido(Object o) {
+        try {
+            listaDeEspera.put(o);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -1,6 +1,6 @@
 package com.chat.hilos;
 
-import com.chat.chatgrupal.ChatApplication;
+import static com.chat.chatgrupal.ChatApplication.*;
 import com.util.Mensaje;
 import com.util.Usuario;
 import javafx.application.Platform;
@@ -21,8 +21,6 @@ public class GestionCliente implements Runnable{
     public VBox vBoxChat;
     private ObservableList<String> usuarios;
     private Usuario usuario;
-    ObjectOutputStream salida = ChatApplication.getSalida();
-    ObjectInputStream entrada = ChatApplication.getEntrada();
     private final String CODIGO_FIN = "termino";
     private boolean funcionando = true;
     public GestionCliente(VBox vBox, ObservableList<String> usuarios,Usuario usuario){
@@ -32,24 +30,16 @@ public class GestionCliente implements Runnable{
     }
     @Override
     public void run() {
-        try {
+        Object o;
+
         while (funcionando){
-
-                if(ChatApplication.getServer().getInputStream().available() > 0) {
-                    gestionarEntrada(entrada.readObject());
-                }
-
+            if ((o = recibirDelServidor())!= null){
+                gestionarEntrada(o);
+            }
 
 
         }
-        salida.writeObject(CODIGO_FIN);
-        salida.flush();
-        salida.close();
-        entrada.close();
-
-        } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        enviarAlServidor(CODIGO_FIN);
     }
 
     /**

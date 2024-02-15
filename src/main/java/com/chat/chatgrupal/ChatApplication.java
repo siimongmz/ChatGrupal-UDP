@@ -15,9 +15,11 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
+import java.io.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -31,13 +33,13 @@ public class ChatApplication extends Application {
     private static GestionCliente gestionCliente;
     private static ObservableList<String> usuarios = FXCollections.observableArrayList();
     @Getter
-    private static Socket server;
+    private static DatagramSocket server;
+    @Getter
+    private static InetAddress direccion;
+    @Getter
+    private static int PUERTO_SERVIDOR = 6000;
     @Getter
     private static VBox vBoxChat;
-    @Getter
-    private static ObjectInputStream entrada;
-    @Getter
-    private static ObjectOutputStream salida;
 
 
     @Override
@@ -56,6 +58,8 @@ public class ChatApplication extends Application {
             stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                 public void handle(WindowEvent we) {
                     gestionCliente.terminarProceso();
+
+                    System.out.println("terminarProcesoHandler");
                 }
             });
             vBoxChat = ((ChatController)fxmlLoader.getController()).getVBoxChat();
@@ -79,12 +83,45 @@ public class ChatApplication extends Application {
      */
     public void conexionServidor(){
         try {
-            server = new Socket("localhost",6000);
-            salida = new ObjectOutputStream(server.getOutputStream());
-            entrada = new ObjectInputStream(server.getInputStream());
+            server = new DatagramSocket();
+            server.setSoTimeout(500);
+            direccion = InetAddress.getByName("localhost");
 
         } catch (IOException e) {
             throw new RuntimeException("Error al conectar con el servidor");
+        }
+
+    }
+
+    public static void enviarAlServidor(Object o){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos;
+        byte[] datos;
+
+        try {
+            oos = new ObjectOutputStream(baos);
+            oos.writeObject(o);
+            datos = baos.toByteArray();
+
+            DatagramPacket packet = new DatagramPacket(datos, datos.length, direccion, PUERTO_SERVIDOR);
+            server.send(packet);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public static Object recibirDelServidor(){
+        byte[] datos = new byte[1024];
+        DatagramPacket packet = new DatagramPacket(datos, datos.length);
+        try {
+            server.receive(packet);
+
+            ByteArrayInputStream bais = new ByteArrayInputStream(datos);
+            ObjectInputStream ois = new ObjectInputStream(bais);
+            return ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            return null;
         }
 
     }
@@ -108,11 +145,7 @@ public class ChatApplication extends Application {
      */
     private void cargarMensajes() {
         ArrayList<Mensaje> mensajes = null;
-        try {
-            mensajes = (ArrayList<Mensaje>) entrada.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        mensajes = (ArrayList<Mensaje>) recibirDelServidor();
         for(Mensaje m : mensajes){
             //textoMensajes.appendText("\n"+m.getUsuario().getNombreUsuario()+": "+m.getContenido());
             gestionCliente.recibirMensaje(m);
