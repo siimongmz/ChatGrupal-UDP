@@ -9,15 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1873ed1-9035-4bab-a442-1082628c057c" name="Changes" comment="Modificacion de archivo de contol de version">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e1873ed1-9035-4bab-a442-1082628c057c" name="Changes" comment="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/chatgrupal/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chat/hilos/GestionCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chat/hilos/GestionCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorUDP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorUDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servidor/hilos/GestionServidorUDP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/Mensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/Mensaje.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706639770798</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP">
+      <option name="closed" value="true" />
+      <created>1708000517408</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708000517408</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +245,8 @@
     <MESSAGE value="Implementado funcionamiento para que los clientes puedan enviar y recibir mensajes evitado bloqueos ademas se soluciona el problema de que quedasen procesos activos" />
     <MESSAGE value="Cierre de los streams y implementacion de lombok" />
     <MESSAGE value="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Los mensajes ahora se muestran en forma de burbuja y se añade icono de enviar" />
+    <MESSAGE value="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemntacion de metodos sustitutivos para remplazar la funcionalidad de TCP por la de UDP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

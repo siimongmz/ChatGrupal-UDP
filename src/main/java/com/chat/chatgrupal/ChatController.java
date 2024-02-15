@@ -1,17 +1,17 @@
 package com.chat.chatgrupal;
 
+import static com.chat.chatgrupal.ChatApplication.*;
 import com.util.Mensaje;
 import com.util.Usuario;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import lombok.Getter;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import static com.chat.chatgrupal.ChatApplication.*;
+
 
 public class ChatController {
 

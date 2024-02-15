@@ -3,18 +3,15 @@ package com.chat.hilos;
 import static com.chat.chatgrupal.ChatApplication.*;
 import com.util.Mensaje;
 import com.util.Usuario;
+
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class GestionCliente implements Runnable{

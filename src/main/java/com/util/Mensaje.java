@@ -1,10 +1,9 @@
 package com.util;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import lombok.Getter;
 
 public class Mensaje implements Serializable {
     @Getter
